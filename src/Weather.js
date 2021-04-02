@@ -37,10 +37,7 @@ export default function Weather() {
           <img src={data.imageUrl} alt={data.description} />
           <span className="temperature-today">19</span>
           <span className="units">
-            <a href="/" className="active">
-              °C
-            </a>{" "}
-            | <a href="/">°F</a>
+              °C | °F
           </span>
         </div>
         <div className="col-4">
