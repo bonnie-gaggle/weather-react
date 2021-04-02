@@ -11,7 +11,7 @@ export default function Forecast(props){
                 {day.day}
               </li>
               <li>
-                <img src="https://openweathermap.org/img/wn/02n@2x.png" />
+                <img src="https://openweathermap.org/img/wn/02n@2x.png" alt="Placeholder image"/>
               </li>
               <li>
                 <strong>{day.maxTemp}°</strong> {day.minTemp}°
