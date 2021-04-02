@@ -6,7 +6,7 @@
 }
 
 .Weather h1 {
-  font-weight: bold !important;
+  font-weight: bold;
   margin-top: 10px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .Weather .col-1 {
-  padding-left: 0 !important;
+  padding-left: 0;
   text-align: left;
 }
 
