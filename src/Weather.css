@@ -1,0 +1,63 @@
+.Weather {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  border-radius: 15px;
+  padding: 10pt;
+  text-align: center;
+}
+
+.Weather h1 {
+  font-weight: bold !important;
+  margin-top: 10px;
+}
+
+.Weather h3 {
+  padding: 10pt;
+}
+
+.Weather ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Weather a {
+  text-decoration: none;
+}
+
+.Weather .col-1 {
+  padding-left: 0 !important;
+  text-align: left;
+}
+
+.Weather .current-location {
+  font-size: 10pt;
+}
+
+.Weather .forecast-icon {
+  width: 50px;
+  height: auto;
+}
+
+.Weather .active {
+  color: black;
+  cursor: default;
+}
+
+.Weather .active:hover {
+  color: black;
+  text-decoration: none;
+}
+
+.Weather .temperature-today {
+  font-size: 36pt;
+  margin-left: 20px;
+}
+
+.Weather .units {
+  position: relative;
+  top: -20px;
+}
+
+.Weather .weather-today {
+  font-size: 52pt;
+}
