@@ -9,7 +9,7 @@ export default function App() {
       <h3>Real-Time Weather</h3>
       <Weather />
       <small>
-        <a href="">
+        <a href="https://github.com/hanksbonniec/weather-react" target="blank">
           Open-source code
         </a> by Bonnie Hanks
           

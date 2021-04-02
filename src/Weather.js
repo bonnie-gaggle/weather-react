@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from "react";
 import "./Weather.css";
 import WeatherSearch from "./WeatherSearch";
+import Forecast from "./Forecast";
 
 export default function Weather() {
   let data = {
@@ -13,6 +14,13 @@ export default function Weather() {
     humidity: 14,
     wind: 5
   };
+  let days = [
+    {day: "Mon", maxTemp: 52, minTemp: 42},
+    {day: "Tue", maxTemp: 29, minTemp: 28},
+    {day: "Wed", maxTemp: 37, minTemp: 24},
+    {day: "Thu", maxTemp: 41, minTemp: 32},
+    {day: "Fri", maxTemp: 13, minTemp: 1}
+  ]
   return (
     <div className="Weather">
       <WeatherSearch />
@@ -47,8 +55,7 @@ export default function Weather() {
           </ul>
         </div>
       </div>
-
-      <div className="row align-items-center"></div>
+      <Forecast  days={days}/>
     </div>
   );
 }

@@ -32,10 +32,11 @@ export default function Weather(props) {
     let iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
     setWeather(
       <ul>
-        <li>Temperature: {temperature}°C</li>
-        <li>Description: {description}</li>
-        <li>Humidity: {humidity}%</li>
-        <li>Wind: {windSpeed} km/h</li>
+        <li><strong>{city}</strong> </li>
+        <li>{temperature}°C</li>
+        <li>{description}</li>
+        <li>💧 {humidity}%</li>
+        <li>🌬️ {windSpeed} km/h</li>
         <li>
           <img src={iconUrl} alt={description} />
         </li>
