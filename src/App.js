@@ -8,12 +8,12 @@ export default function App() {
     <div className="App">
       <h3>Real-Time Weather</h3>
       <Weather />
-      <small>
+      <footer>
         <a href="https://github.com/hanksbonniec/weather-react" target="blank">
           Open-source code
         </a> by Bonnie Hanks
           
-      </small>
+      </footer>
     </div>
   );
 }
