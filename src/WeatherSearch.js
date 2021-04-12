@@ -9,7 +9,7 @@ export default function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     if (city.length > 0) {
-      let apiKey = "96705b159023614cfe376449b9563ca3";
+      const apiKey = "96705b159023614cfe376449b9563ca3";
       let apiEndpoint = "https://api.openweathermap.org/data/2.5/";
       let units = "metric";
       let apiUrl = `${apiEndpoint}weather?q=${city}&units=${units}&appid=${apiKey}`;
