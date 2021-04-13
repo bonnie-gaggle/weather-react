@@ -1,80 +1,80 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState } from "react";
 import "./Weather.css";
-import WeatherSearch from "./WeatherSearch";
-import Forecast from "./Forecast";
+import WeatherNow from "./WeatherNow";
 import axios from "axios";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ready:false});
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response){
-
-    {/*setIcon(`http://openweathermap.org/img/wn/${response.data.weather.icon}@2x.png`);*/}
-
-    setReady(true);
     setWeatherData({
+      ready: true,
       temperature: Math.round(response.data.main.temp),
       city: response.data.name,
       condition: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed)
-    })
+    });
   }
 
-  if (ready) {
+  function updateCity(event) {
+    setCity(event.target.value);
+  }
+
+  function search(){
+      const apiKey = "96705b159023614cfe376449b9563ca3";
+      let apiEndpoint = "https://api.openweathermap.org/data/2.5/";
+      let units = "metric";
+      let apiUrl = `${apiEndpoint}weather?q=${city}&units=${units}&appid=${apiKey}`;
+      axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+    
+  if (weatherData.ready) {
     return (
       <div className="Weather">
-        <WeatherSearch />
-        <div className="row align-items-center">
-          <div className="col-8">
-            <h1>{weatherData.city}</h1>
-            <ul>
-              <li>
-                Day, Time
-              </li>
-              <li>{weatherData.condition}</li>
-            </ul>
-            <br />
-            <img src={weatherData.icon} alt={weatherData.condition} />
-            <span className="temperature-today">{weatherData.temperature}</span>
-            <span className="units">
-                °C | °F
-            </span>
+        <form onSubmit={handleSubmit}>
+          <div className="row align-items-center">
+              <div className="col-8">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search for a city"
+                  autofocus="on"
+                  autoComplete="off"
+                  onChange={updateCity}
+                />
+              </div>
+              <div className="col-1 search">
+                <input
+                  type="submit"
+                  className="btn btn-outline-secondary"
+                  value="🔍"
+                />
+              </div>
+            <div className="col-2">
+              <input
+                type="button"
+                className="btn btn-outline-secondary current-location"
+                value="Current location"
+              />
+            </div>
           </div>
-          <div className="col-4">
-            <ul>
-              <li>
-                <span role="img">💧</span> <span></span>
-                {weatherData.humidity}%
-              </li>
-              <li>
-                <span role="img">🌬️</span> <span></span> {weatherData.wind} km/h
-              </li>
-            </ul>
-          </div>
-        </div>
+        </form>
+        <WeatherNow data={weatherData} />
         {/*<Forecast  days={days}/>*/}
       </div>
     );
   } else {
-    const apiKey = "96705b159023614cfe376449b9563ca3";
-      let apiEndpoint = "https://api.openweathermap.org/data/2.5/";
-      let units = "metric";
-      let city = "Los Angeles";
-      let apiUrl = `${apiEndpoint}weather?q=${city}&units=${units}&appid=${apiKey}`;
-      axios.get(apiUrl).then(handleResponse);
-
+      search();
       return "Loading...";
   }
-  
-  let days = [
-    {day: "Mon", maxTemp: 52, minTemp: 42},
-    {day: "Tue", maxTemp: 29, minTemp: 28},
-    {day: "Wed", maxTemp: 37, minTemp: 24},
-    {day: "Thu", maxTemp: 41, minTemp: 32},
-    {day: "Fri", maxTemp: 13, minTemp: 1}
-  ]
 }

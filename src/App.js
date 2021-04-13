@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div className="App">
       <h3>Real-Time Weather</h3>
-      <Weather />
+      <Weather defaultCity="Los Angeles"/>
       <footer>
         <a href="https://github.com/hanksbonniec/weather-react" target="blank">
           Open-source code
