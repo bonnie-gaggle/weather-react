@@ -1,4 +1,5 @@
 import React from "react";
+import FormattedDate from "./FormattedDate";
 
 export default function WeatherNow(props) {
   return (
@@ -8,7 +9,7 @@ export default function WeatherNow(props) {
             <h1>{props.data.city}</h1>
             <ul>
               <li>
-                Day, Time
+                <FormattedDate date={props.data.date} />
               </li>
               <li>{props.data.condition}</li>
             </ul>
