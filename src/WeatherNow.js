@@ -15,8 +15,10 @@ export default function WeatherNow(props) {
               <li>{props.data.condition}</li>
             </ul>
             <br />
-            <img src={props.data.icon} alt={props.data.condition} />
-            <Temperature celsius={props.data.temperature} />
+            <div className="clearfix">
+              <img src={props.data.icon} alt={props.data.condition} className="float"/>
+              <Temperature celsius={props.data.temperature} />
+            </div>
           </div>
           <div className="col-4">
             <ul>

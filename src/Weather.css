@@ -44,11 +44,6 @@
   margin-left: 20px;
 }
 
-.Weather .units {
-  position: relative;
-  top: -20px;
-}
-
 .Weather .weather-today {
   font-size: 52pt;
 }
