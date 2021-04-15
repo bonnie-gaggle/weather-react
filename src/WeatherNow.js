@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 
 export default function WeatherNow(props) {
   return (
@@ -15,10 +16,7 @@ export default function WeatherNow(props) {
             </ul>
             <br />
             <img src={props.data.icon} alt={props.data.condition} />
-            <span className="temperature-today">{props.data.temperature}</span>
-            <span className="units">
-                °C | °F
-            </span>
+            <Temperature celsius={props.data.temperature} />
           </div>
           <div className="col-4">
             <ul>
