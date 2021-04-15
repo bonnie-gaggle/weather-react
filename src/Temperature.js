@@ -16,8 +16,8 @@ export default function Temperature(props){
   }
   if (units === "celsius"){
     return(
-      <span className="temperature float">
-        <span className="temperature-today align-middle">{Math.round(fahrenheit())}</span>
+      <span className="temperature">
+        <span className="temperature-today align-middle">{Math.round(props.celsius)}</span>
         <span className="units">
           °C | <a href="/" onClick={convertToFahrenheit}>°F</a>
         </span>
@@ -26,7 +26,7 @@ export default function Temperature(props){
   } else {
     return(
       <span className="temperature">
-        <span className="temperature-today">{Math.round(props.celsius)}</span>
+        <span className="temperature-today align-middle">{Math.round(fahrenheit())}</span>
         <span className="units">
           <a href="/" onClick={convertToCelsius}>°C</a> | °F
         </span>
