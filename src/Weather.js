@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState } from "react";
+import Forecast from "./Forecast";
 import "./Weather.css";
 import WeatherNow from "./WeatherNow";
 import axios from "axios";
@@ -17,7 +18,8 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
-      wind: Math.round(response.data.wind.speed)
+      wind: Math.round(response.data.wind.speed),
+      coordinates: response.data.coord
     });
   }
 
@@ -71,7 +73,7 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherNow data={weatherData} />
-        {/*<Forecast  days={days}/>*/}
+        <Forecast coordinates={weatherData.coordinates}/>
       </div>
     );
   } else {
