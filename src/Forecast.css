@@ -1,0 +1,8 @@
+.Forecast .Forecast-temperature-max {
+  font-weight: bold;
+}
+
+.Forecast .Forecast-temperature-min {
+  opacity: 0.6;
+  margin-left: 10px;
+}
