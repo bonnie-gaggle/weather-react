@@ -1,4 +1,5 @@
 import React from "react";
+import "./Forecast.css";
 
 export default function ForecastDay(props){
   let imageUrl = `https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`
@@ -24,7 +25,7 @@ export default function ForecastDay(props){
   }
 
   return (
-    <div>
+    <div className = "Forecast">
       <ul>
         <li>
           {day()}
