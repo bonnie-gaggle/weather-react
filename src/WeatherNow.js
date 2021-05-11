@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import Temperature from "./Temperature";
+import WeatherIcon from "./WeatherIcon";
 
 export default function WeatherNow(props) {
   return (
@@ -16,7 +17,9 @@ export default function WeatherNow(props) {
             </ul>
             <br />
             <div className="clearfix">
-              <img src={props.data.icon} alt={props.data.condition} className="float"/>
+              <div className="float-left">
+                <WeatherIcon code={props.data.icon} alt={props.data.description}/>
+              </div> 
               <Temperature celsius={props.data.temperature} />
             </div>
           </div>
