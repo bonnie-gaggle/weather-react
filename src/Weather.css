@@ -35,7 +35,22 @@
   font-size: 52pt;
 }
 
+input[type="text"] {
+  color: #4ca1a3;
+}
+
 input[type="submit"] {
   font-family: FontAwesome;
   line-height: 36px;
+}
+
+input[type="button"] {
+  color: #a5e1ad;
+  background-color: #4ca1a3;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  color: #4ca1a3;
+  background-color: #a5e1ad;
 }
