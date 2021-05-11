@@ -1,7 +1,11 @@
 body {
-  font-family: "Montserrat", sans-serif;
-  max-width: 800px;
+  font-family: "Roboto Mono", monospace;
+  max-width: 900px;
   color: #a5e1ad;
+}
+
+h3 {
+  color: #4ca1a3;
 }
 
 strong {
