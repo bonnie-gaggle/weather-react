@@ -20,7 +20,7 @@ export default function WeatherNow(props) {
               <div className="float-left">
                 <WeatherIcon code={props.data.icon} alt={props.data.description}/>
               </div> 
-              <Temperature celsius={props.data.temperature} />
+              <Temperature fahrenheit={props.data.temperature} />
             </div>
           <div className="col-4">
             <ul>

@@ -37,7 +37,7 @@ export default function Weather(props) {
     let long=position.coords.longitude;
     const apiKey = "96705b159023614cfe376449b9563ca3";
     const apiEndpoint = "https://api.openweathermap.org/data/2.5/";
-    let units = "metric";
+    let units = "imperial";
     let apiUrl = `${apiEndpoint}weather?lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
@@ -45,7 +45,7 @@ export default function Weather(props) {
   function search(){
       const apiKey = "96705b159023614cfe376449b9563ca3";
       let apiEndpoint = "https://api.openweathermap.org/data/2.5/";
-      let units = "metric";
+      let units = "imperial";
       let apiUrl = `${apiEndpoint}weather?q=${city}&units=${units}&appid=${apiKey}`;
       axios.get(apiUrl).then(handleResponse);
   }
