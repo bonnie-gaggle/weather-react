@@ -1,5 +1,5 @@
 .Weather {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-image: linear-gradient(45deg, #21094e, #511281 80%);
   border-radius: 15px;
   padding: 10pt;
   text-align: center;
@@ -22,6 +22,8 @@
 
 .Weather .search {
   padding: 0;
+  background-color: #4ca1a3;
+  color: #a5e1ad;
 }
 
 .Weather .temperature-today {
@@ -31,4 +33,9 @@
 
 .Weather .weather-today {
   font-size: 52pt;
+}
+
+input[type="submit"] {
+  font-family: FontAwesome;
+  line-height: 36px;
 }
